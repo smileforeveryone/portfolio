@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>きのこ商会 | Web制作・ITサポート</title>
     <style>
-        /* デザインの設定（CSS） */
         :root {
             --main-color: #2c3e50;
-            --accent-color: #27ae60;
-            --bg-color: #f4f7f6;
+            --accent-color: #e67e22; /* きのこらしい暖色に変更 */
+            --bg-color: #f9f9f7;
             --text-color: #333;
         }
         body {
@@ -22,105 +21,154 @@
         }
         header {
             background-color: white;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
             text-align: center;
-            border-bottom: 4px solid var(--accent-color);
+            border-bottom: 5px solid #f1c40f;
+        }
+        /* きのこイラストエリア */
+        .logo-area {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            display: block;
         }
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
         section {
             background: white;
-            padding: 2rem;
+            padding: 2.5rem;
             margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        h1, h2 { color: var(--main-color); }
-        .hero { text-align: center; padding: 3rem 1rem; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .tagline { font-size: 1.2rem; color: #666; }
-        .services ul { list-style: none; padding: 0; }
-        .services li {
-            padding: 10px 0;
-            border-bottom: 1px dotted #ccc;
+        h1, h2 { color: var(--main-color); text-align: center; }
+        
+        /* タブデザイン */
+        .tab-container {
+            margin-top: 2rem;
         }
-        .services li::before {
-            content: "🍄";
-            margin-right: 10px;
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
         }
-        .sns-area {
-            background: #eef9f1;
-            padding: 1rem;
-            border-radius: 5px;
-            text-align: center;
+        .tab-btn {
+            padding: 12px 20px;
+            border: 2px solid #eee;
+            background: white;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            color: #666;
         }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #888;
-            font-size: 0.9rem;
-        }
-        .btn {
-            display: inline-block;
+        .tab-btn.active {
             background: var(--accent-color);
             color: white;
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 1rem;
-            transition: opacity 0.3s;
+            border-color: var(--accent-color);
         }
-        .btn:hover { opacity: 0.8; }
+        /* カード型のコンテンツエリア */
+        .tab-content {
+            display: none;
+            padding: 2rem;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            background: #fff;
+            animation: fadeIn 0.5s;
+            text-align: center;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--main-color);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 1.5rem;
+        }
+        footer { text-align: center; padding: 3rem; color: #999; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>きのこ商会</h1>
-    <p class="tagline">あなたの街の「もったいない」をWebで解決します</p>
+    <div class="logo-area">🍄</div> <h1>きのこ商会</h1>
+    <p>あなたの街の「もったいない」をWebで解決します</p>
 </header>
 
 <div class="container">
-    <section class="hero">
-        <h2>身近なWebの相談役</h2>
-        <p>ドライブやツーリングで出会う素敵なお店の魅力を、もっと多くの人に届けたい。<br>
-        「きのこ商会」は、小規模Webサイト制作とSNS活用を得意とする個人事務所です。</p>
-        <a href="#contact" class="btn">ご相談はこちら</a>
-    </section>
-
-    <section id="about">
-        <h2>事業主について</h2>
-        <p>事務職で培った丁寧な対応と、正確な作業を大切にしています。最新のAI技術を活用することで、高品質なサイトを「早く」「お手頃な価格で」提供することが可能です。</p>
-    </section>
-
-    <section class="services">
+    <section id="services">
         <h2>できること</h2>
-        <ul>
-            <li>小規模Webサイト・ランディングページ制作</li>
-            <li>スマートフォン対応（レスポンシブデザイン）</li>
-            <li>Instagram・X（旧Twitter）のWebサイト埋め込み</li>
-            <li>既存サイトのリニューアル・保守管理</li>
-        </ul>
-    </section>
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(event, 'web')">Webサイト制作</button>
+                <button class="tab-btn" onclick="openTab(event, 'mobile')">スマホ対応</button>
+                <button class="tab-btn" onclick="openTab(event, 'sns')">SNS連携</button>
+                <button class="tab-btn" onclick="openTab(event, 'repair')">サイト更新</button>
+            </div>
 
-    <section class="sns-area">
-        <h2>最新情報（SNS）</h2>
-        <p>ここにInstagramやXの投稿が自動表示されるよう設定可能です。</p>
-        </section>
+            <div id="web" class="tab-content active">
+                <h3>小規模Webサイト・LP制作</h3>
+                <p>AIを活用し、高品質かつスピーディーに制作します。お店の「顔」となる本格的なページを、お手頃な価格で実現します。</p>
+            </div>
+            <div id="mobile" class="tab-content">
+                <h3>スマートフォン最適化</h3>
+                <p>今の時代、Webサイトの閲覧は8割がスマホです。どの端末で見ても美しく、使いやすい「レスポンシブデザイン」を標準で提供します。</p>
+            </div>
+            <div id="sns" class="tab-content">
+                <h3>Instagram・X 埋め込み</h3>
+                <p>SNSの最新投稿をサイトに自動表示。わざわざサイトを更新しなくても、お客様に最新情報を届ける仕組みを作ります。</p>
+            </div>
+            <div id="repair" class="tab-content">
+                <h3>既存サイトのリニューアル</h3>
+                <p>「昔作ったきり動きがない」「スマホで見づらい」そんなサイトを、今の技術で使いやすく、親しみやすいデザインに生まれ変わらせます。</p>
+            </div>
+        </div>
+    </section>
 
     <section id="contact">
         <h2>お問い合わせ</h2>
-        <p>制作のご依頼や、まずは話を聞いてみたいという方も、お気軽にご連絡ください。</p>
-        <p>Email: info@example.com (※サンプル)</p>
+        <p style="text-align: center;">ツーリング先での出会いも大切にしています。<br>お気軽にお声がけください。</p>
+        <div style="text-align: center;">
+            <a href="mailto:info@example.com" class="btn">メールを送る</a>
+        </div>
     </section>
 </div>
 
 <footer>
     <p>&copy; 2026 きのこ商会 All Rights Reserved.</p>
 </footer>
+
+<script>
+    /* タブ切り替え用のJavaScript */
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            tabcontent[i].classList.remove("active");
+        }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.className += " active";
+    }
+</script>
 
 </body>
 </html>
