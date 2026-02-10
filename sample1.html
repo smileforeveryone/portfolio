@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ラーメンきのこ | 身体に優しい鶏ガラ醤油</title>
+    <style>
+        /* 基本設定 */
+        :root {
+            --primary-color: #d4a373; /* 木の温もりのあるベージュ */
+            --accent-color: #8b4513;  /* 醤油をイメージした茶色 */
+            --text-color: #333;
+            --bg-color: #fffaf0;     /* 優しいアイボリー */
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ヘッダー */
+        header {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            letter-spacing: 0.2em;
+        }
+
+        /* メインビジュアル */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1557872245-741f4c666e75?auto=format&fit=crop&q=80&w=1200') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* コンテンツセクション */
+        section {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+
+        /* メニュー紹介 */
+        .menu-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .menu-price {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+
+        /* こだわり */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            background: #fff;
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* 店舗情報 */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table th, .info-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .info-table th {
+            width: 30%;
+            color: var(--accent-color);
+        }
+
+        /* フッター */
+        footer {
+            background-color: var(--accent-color);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ラーメン きのこ</h1>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h2>毎日飲める、心と身体に染みる一杯。</h2>
+            <p>国産鶏ガラ100%の澄んだ黄金スープ</p>
+        </div>
+    </div>
+
+    <section id="concept">
+        <h3 class="section-title">私たちのこだわり</h3>
+        <div class="features">
+            <div class="feature-item">
+                <h4>厳選された鶏ガラ</h4>
+                <p>余分な脂を除き、じっくりと時間をかけて抽出したスープは、驚くほど澄んでいて健康的です。</p>
+            </div>
+            <div class="feature-item">
+                <h4>無添加への追求</h4>
+                <p>化学調味料は一切不使用。素材本来の旨味を活かすため、塩と醤油の配合にもこだわりました。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu">
+        <h3 class="section-title">お品書き</h3>
+        <div class="menu-card">
+            <h4>看板メニュー：鶏ガラ醤油きのこ麺</h4>
+            <p>数種類のきのこから取った出汁と鶏スープの絶妙なブレンド。</p>
+            <p class="menu-price">980円（税込）</p>
+        </div>
+    </section>
+
+    <section id="access">
+        <h3 class="section-title">店舗案内</h3>
+        <p style="text-align: center; margin-bottom: 20px;">カウンター8席のみの小さなお店です。落ち着いた空間でお召し上がりください。</p>
+        <table class="info-table">
+            <tr>
+                <th>住所</th>
+                <td>東京都◯◯区△△町 1-2-3</td>
+            </tr>
+            <tr>
+                <th>営業時間</th>
+                <td>11:30 〜 15:00 / 18:00 〜 21:00</td>
+            </tr>
+            <tr>
+                <th>定休日</th>
+                <td>月曜日・火曜日</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ラーメンきのこ All Rights Reserved.</p>
+        <a href="index.html" class="back-link">← ポートフォリオに戻る</a>
+    </footer>
+
+</body>
+</html>
