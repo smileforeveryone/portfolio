@@ -41,7 +41,7 @@
         }
 
         /* メインビジュアル */
-        .hero {
+        /* .hero {
             height: 60vh;
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
                         url('https://images.unsplash.com/photo-1557872245-741f4c666e75?auto=format&fit=crop&q=80&w=1200') center/cover;
@@ -51,12 +51,41 @@
             color: #fff;
             text-align: center;
         }
-
+        
         .hero-content h2 {
             font-size: 2.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        } */
+        /* ヒーローセクションの調整 */
+        .hero {
+            /* 画像をうっすら表示させるための設定 */
+            background: linear-gradient(rgba(255, 250, 240, 0.7), rgba(255, 250, 240, 0.7)), 
+                        url('https://images.unsplash.com/photo-1591814441573-718a030b69a0?auto=format&fit=crop&q=80&w=1200') center/cover;
+            
+            /* 上下の余白を詰める調整 */
+            padding: 40px 20px; /* 上下40pxに設定（以前より大幅に狭くしました） */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
-
+        
+        .hero-content {
+            /* 文字の色を背景に合わせて調整（濃い茶色） */
+            color: var(--accent-color);
+        }
+        
+        .hero-content h2 {
+            font-size: 2rem;
+            margin: 0 0 10px 0; /* 下の隙間を10pxに */
+            letter-spacing: 0.1em;
+        }
+        
+        .hero-content p {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
         /* コンテンツセクション */
         section {
             padding: 60px 20px;
@@ -140,6 +169,13 @@
     <header>
         <h1>ラーメン きのこ</h1>
     </header>
+
+    <!-- <div class="hero">
+        <div class="hero-content">
+            <h2>毎日飲める、心と身体に染みる一杯。</h2>
+            <p>国産鶏ガラ100%の澄んだ黄金スープ</p>
+        </div>
+    </div> -->
 
     <div class="hero">
         <div class="hero-content">
